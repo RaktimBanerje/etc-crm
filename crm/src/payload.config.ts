@@ -9,14 +9,22 @@ import { buildConfig } from 'payload/config'
 import Users from './collections/Users'
 import { Document } from './collections/Document'
 import { Media } from './collections/Media'
+import LeadStatus from './collections/LeadStatus'
+import Leads from './collections/Lead'
+import Logo from './graphics/Logo'
 
 export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
+    components: {
+      graphics: {
+        Logo
+      }
+    }
   },
   editor: slateEditor({}),
-  collections: [Users, Document, Media],
+  collections: [Users, Document, Media, LeadStatus, Leads],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
