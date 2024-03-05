@@ -12,6 +12,8 @@ import { Media } from './collections/Media'
 import LeadStatus from './collections/LeadStatus'
 import Leads from './collections/Lead'
 import Logo from './graphics/Logo'
+import Dashboard from './components/Dashboard'
+import CRM from './components/CRM'
 
 export default buildConfig({
   admin: {
@@ -20,7 +22,10 @@ export default buildConfig({
     components: {
       graphics: {
         Logo
-      }
+      },
+      views: {
+        Dashboard: Dashboard,
+      },
     }
   },
   editor: slateEditor({}),
